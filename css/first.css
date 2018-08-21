@@ -1,0 +1,393 @@
+.childrenBody {
+    padding: 10px;
+}
+
+.need {
+    min-height: 100px;
+}
+
+.need:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.need li {
+    width: 24%;
+    color: #5b7287;
+    text-align: center;
+    margin: 10px 0;
+    float: left;
+}
+
+.need li h2 {
+    margin-bottom: 20px;
+    padding-top: 25px;
+}
+
+.need li p {
+    color: #222;
+    font-size: 22px;
+}
+
+.sign {
+    padding: 10px;
+}
+
+.sign .title {
+    width: 100%;
+}
+
+.sign .title:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.sign .title h2 {
+    float: left;
+    font-size: 16px;
+    color: #697b8c;
+}
+
+.sign .title a {
+    float: right;
+    font-size: 14px;
+    color: #697b8c;
+}
+
+.table, table {
+    width: 100%;
+}
+
+.table tr {
+    height: 25px;
+    line-height: 25px;
+}
+
+.table td {
+    width: 33.33%;
+    overflow: hidden;
+}
+
+.table td:last-child {
+    text-align: right;
+}
+
+.chart-item {
+    width: 40%;
+    float: left;
+    text-align: center;
+    margin-bottom: 30px;
+    min-height: 250px;
+}
+
+.chart {
+    float: left;
+    width: 35%;
+}
+
+.statusCharts {
+    width: 100%;
+    height: 350px;
+}
+
+.chart-item h2 {
+    text-align: center;
+    font-size: 14px;
+    color: #232323;
+}
+
+.plan {
+    border-left: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 10px 0 0;
+    width: 375px;
+    display: inline-block;
+}
+
+.progress {
+    /*width: 30%;*/
+    margin: 0 auto;
+}
+
+.tableList {
+    width: 100%;
+    vertical-align: top;
+    float: left;
+}
+
+.tableList table {
+    height: 0;
+}
+
+#itemStatus {
+    position: relative;
+}
+
+.mark {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    line-height: 15px;
+}
+
+.mark p {
+    margin-bottom: 10px;
+}
+
+.mark p i {
+    display: inline-block;
+    vertical-align: middle;
+    width: 25px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.mark p:first-child i {
+    background-color: #64cc70;
+}
+
+.mark p:nth-child(2) i {
+    background-color: #eec442;
+}
+
+.mark p:last-child i {
+    background-color: #e5220d;
+}
+
+.finance {
+    width: 750px;
+    margin: 50px auto 0;
+    position: relative;
+}
+
+.finance .state p {
+    position: absolute;
+}
+
+.finance .cut {
+    height: 100%;
+
+}
+
+.finance .cut i {
+    display: block;
+    position: absolute;
+    height: 105%;
+    border-right: 1px #000000 dashed;
+    z-index: 999;
+}
+
+.finance .cut i:first-child {
+    left: 0;
+}
+
+.finance .cut i:nth-child(2) {
+    left: 150px;
+}
+
+.finance .cut i:nth-child(3) {
+    left: 300px;
+}
+
+.finance .cut i:nth-child(4) {
+    left: 450px;
+}
+
+.finance .cut i:nth-child(5) {
+    left: 600px;
+}
+
+.finance .state p:first-child {
+    bottom: -30px;
+    left: 0;
+}
+
+.finance .state p:nth-child(2) {
+    bottom: -30px;
+    left: 150px;
+}
+
+.finance .state p:nth-child(3) {
+    bottom: -30px;
+    left: 300px;
+}
+
+.finance .state p:nth-child(4) {
+    bottom: -30px;
+    left: 450px;
+}
+
+.finance .state p:nth-child(5) {
+    bottom: -30px;
+    left: 600px;
+}
+
+.item-pro {
+    height: 65px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.item-pro h2 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    left: -50px;
+}
+
+.item-pro:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.item-pro li {
+    float: left;
+    width: 150px;
+    height: 100%;
+    background-color: #00F7DE;
+}
+
+.project-status {
+    height: 350px;
+    float: left;
+}
+
+.project-status:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.each {
+    float: left;
+    width: 35%;
+    margin: 10px 0 0 5%;
+    height: 350px;
+    border: 1px solid #d9d9d9;
+    position: relative;
+}
+
+.each h1 {
+    background-color: #f9f9f9;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    padding-left: 15px;
+}
+
+.each .box {
+    width: 100%;
+    position: relative;
+    overflow-x: auto;
+    height: 320px;
+}
+
+.project-list {
+    position: absolute;
+    bottom: 30px;
+    width: 10000px;
+}
+
+.project-list:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.list {
+    float: left;
+    width: 50px;
+    background: #e5220d;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    margin: 0 5px;
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+}
+
+.pillar.ok {
+    height: 150px;
+    background-color: #64cc70;
+}
+
+.pillar.notBad {
+    height: 200px;
+    background-color: #eec442;
+}
+
+.pillar.bad {
+    height: 250px;
+    background-color: #e5220d;
+}
+
+#proCharts {
+    width: 500px;
+    height: 300px;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    position: relative;
+    margin: 0 auto;
+}
+
+#itemStatus .chart-item:nth-child(odd) {
+    margin-left: 0 !important;
+}
+
+#itemStatus .chart-item:nth-child(3) {
+    margin-left: 100px !important;
+}
+
+.help {
+    position: relative;
+    height: 100%;
+}
+
+.help span {
+    display: block;
+    width: 50px;
+    position: absolute;
+    bottom: -23px;
+    color: #232323;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+
+}
+
+.yAxis1, .yAxis2, .yAxis3 {
+    position: absolute;
+    left: -110px;
+    width: 100px;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.yAxis1 {
+    top: 50px;
+}
+
+.yAxis2 {
+    top: 90px;
+}
+
+.yAxis3 {
+    top: 135px;
+}
+
+.planToDo {
+    cursor: pointer;
+}
+
+.legend{
+    width: 45%;
+    float: left;
+    margin-bottom: 15px;
+}

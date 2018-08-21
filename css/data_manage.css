@@ -1,0 +1,55 @@
+body {
+    padding: 10px;
+    /*overflow: hidden;*/
+}
+
+.project {
+    border-radius: 4px;
+    border: 1px solid #009688;
+    margin: 10px 0;
+}
+
+.project .title {
+    background-color: #009688;
+}
+.project .title:after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.project .title .l-title {
+    float: left;
+    font-size: 14px;
+    line-height: 40px;
+    height: 40px;
+    color: #FFFFFF;
+    padding-left: 5px;
+
+}
+
+.itemBox{
+    padding: 5px 5px 5px 15px;
+    max-height: 550px;
+    overflow: auto;
+}
+.itemBox i{
+    color: #dbc056;
+
+}
+
+.jstree-ocl{
+    background-image: url('../images/32px.png');
+    background-repeat: repeat-y;
+    background-position: -68px -97px;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+.item {
+    cursor: pointer;
+}
+.item.red span{
+    color: red;
+}

@@ -1,0 +1,12 @@
+
+.row{
+    padding: 10px 0;
+    font-size: 14px;
+}
+.memHeadImage{
+    border-radius: 50%;
+    overflow: hidden;
+}
+.vipInfo{
+    margin-top: 40px;
+}

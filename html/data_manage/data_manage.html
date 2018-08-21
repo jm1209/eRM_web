@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>资料管理</title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_707333_zpgi8y9omvb.css"/>
+    <link rel="stylesheet" href="../../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../../css/data_manage.css">
+</head>
+<body class="childrenBody">
+<div class="layui-row">
+    <div class="layui-col-xs4 layui-col-sm4 layui-col-md3 project">
+        <div class="title">
+            <div class="l-title">
+                <i class="layui-icon">&#xe716;</i>
+                <span>项目管理目录</span>
+            </div>
+            <div class="r-title">
+
+            </div>
+        </div>
+        <div class="itemBox">
+        </div>
+    </div>
+    <div class="layui-col-xs12 layui-col-sm12 layui-col-md8 layui-col-md-offset1 layui-form">
+        <div class="layui-form-item">
+            <label class="layui-form-label">资料类别</label>
+            <div class="layui-inline">
+                <select name="dateTypeId" lay-filter="dateTypeId" class="dateTypeId">
+                    <option value="">全部</option>
+
+                </select>
+            </div>
+            <a class="layui-btn layui-btn-normal" id="downFileList">下载</a>
+        </div>
+        <table id="tableList" lay-filter="tableList"></table>
+    </div>
+
+
+</div>
+
+
+<script src="../../layui/layui.js"></script>
+<script src="../../js/common/base.js"></script>
+<script src="../../js/data_manage/data_manage.js"></script>
+</body>
+</html>

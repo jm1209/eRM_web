@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择时间</title>
+    <link rel="stylesheet" href="../../../layui/css/layui.css"/>
+    <style>
+        .fileDown {
+            width: 250px;
+            border: 1px solid #CCCCCC;
+            margin: 10px auto;
+            padding-left: 10px;
+        }
+
+        .fileDown li {
+            line-height: 30px;
+        }
+
+        .twoNode {
+            padding-left: 15px;
+        }
+
+        .fileDown input {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<div class="fileDown">
+    <ul>
+       <!-- <li class="oneNode">
+            <input type="checkbox" class="downCheck">
+            <span>父节点</span>
+            <ul>
+                <li class="twoNode">
+                    <input type="checkbox" class="downCheck">
+                    <span>子节点</span>
+                </li>
+            </ul>
+        </li>-->
+    </ul>
+</div>
+
+
+<script src="../../../layui/layui.js"></script>
+<script src="../../../js/common/base.js"></script>
+<script>
+    layui.use(['layer', "jquery",], function () {
+        var $ = layui.jquery, layer = parent.layer === undefined ? layui.layer : top.layer;
+        var param = {jquery: $, layer: layer, url: 'systemCenter/dataTypeDrop'};
+        ajaxJS(param, {power: 0}, function (d) {
+            var data = d.data;
+            for (var i = 0; i < data.length; i++) {
+                var oneLi = '<li class="oneNode">' +
+                    '        <input type="checkbox" class="downCheck" dataId="' + data[i].id + '" dataTypeName="'+data[i].dataTypeName+'">' +
+                    '        <span>' + data[i].dataTypeName + '</span>' +
+                    '        <ul>' +
+                    '        </ul>' +
+                    '        </li>';
+                $('.fileDown>ul').append(oneLi);
+                var twoNode = data[i].child;
+                for (var j = 0; j < twoNode.length; j++) {
+                    var twoLi = '<li class="twoNode">' +
+                        '        <input type="checkbox" class="downCheck" dataId="' + twoNode[j].id + '" dataTypeName="'+twoNode[j].dataTypeName+'">' +
+                        '        <span>'+twoNode[j].dataTypeName+'</span>' +
+                        '        </li>';
+                    $('.oneNode').eq(i).find('ul').append(twoLi);
+                }
+            }
+
+        })
+    })
+</script>
+</body>
+</html>

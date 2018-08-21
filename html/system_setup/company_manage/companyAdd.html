@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>添加公司</title>
+    <link rel="stylesheet" href="../../../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../../../css/public.css"/>
+</head>
+<style>
+    .yzCompanyBox {
+        display: none;
+    }
+</style>
+<body class="childrenBody">
+<input type="hidden" class="sign"/>
+<form class="layui-form">
+    <div class="layui-form-item">
+        <label class="layui-form-label">业主公司 <e>*</e></label>
+        <div class="layui-input-inline">
+            <select name="yzCompany" class="yzCompany" lay-filter='yzCompany'>
+
+            </select>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">公司名称 <e>*</e></label>
+            <div class="layui-input-inline">
+                <input type="text" maxlength="30" name="companyName" lay-verify="required" placeholder="请输入公司名称" class="layui-input">
+            </div>
+        </div>
+
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">公司主图</label>
+        <div class="layui-inline">
+            <div class="layui-upload-drag uploadImg" id="uploadImg">
+                <div class="upload-wrapper">
+                    <i class="layui-icon"></i>
+                    <p>点击上传，或将文件拖拽到此处</p>
+                </div>
+                <div class="showImg">
+                    <img src="" width="100%" height="100%">
+                    <div class="layui-icon closeImg">&#xe640;</div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-inline uploadImgSize">图片最佳尺寸为 <b>125 * 125</b>像素</div>
+    </div>
+
+    <div class="modleBtn">
+        <div class="layui-form-item">
+            <button class="layui-btn layui-btn-normal layui-btn-sm" lay-filter="addOrEdit" lay-submit>提交</button>
+            <!--<button class="layui-btn layui-btn-sm layui-btn-primary cancel">取消</button>-->
+        </div>
+    </div>
+</form>
+
+<script src="../../../layui/layui.js"></script>
+<script src="../../../js/common/base.js"></script>
+<script src="../../../js/system_setup/company_manage/companyAdd.js"></script>
+</body>
+</html>

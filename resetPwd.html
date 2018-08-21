@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html class="loginHtml">
+<head>
+    <meta charset="utf-8">
+    <title>优得新能源</title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_707333_mpmfhj8ej6.css"/>
+    <link rel="stylesheet" href="layui/css/layui.css"/>
+    <link rel="stylesheet" href="css/public.css"/>
+    <style>
+        .back{
+            margin-left: 0!important;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body class="loginBody"
+      style="background: url('images/retrieve.jpg') center scroll no-repeat;background-size: 100% 100%">
+<div class="login-wrapper">
+    <form class="layui-form" style="left: 50%;transform: translate3d(-50%,-50%,0)">
+        <h1 class="login-title">重置密码</h1>
+        <div class="layui-form-item input-item">
+            <span class="iconfont icon-yonghu"></span>
+            <input type="text" placeholder="账号" name="account">
+        </div>
+        <div class="layui-form-item input-item">
+            <span class="iconfont icon-suo"></span>
+            <input type="text" placeholder="邮箱" name="email">
+        </div>
+        <div class="layui-form-item login-btn">
+            <button class="layui-btn layui-block" lay-filter="next" lay-submit>重置</button>
+            <a href="index.html" class="layui-btn layui-block back">返回</a>
+        </div>
+    </form>
+</div>
+
+
+<script src="layui/layui.js"></script>
+<script src="js/common/base.js"></script>
+<script src="js/resetPwd.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>甘特图查询</title>
+    <link rel="stylesheet" type="text/css" href="../css/jquery-ui-1.8.4.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/jquery.ganttView.css"/>
+    <style type="text/css">
+        body {
+            font-family: tahoma, verdana, helvetica;
+            font-size: 0.8em;
+            padding: 10px;
+        }
+
+        .ganttview-vtheader .ganttview-vtheader-item:first-child {
+            display: none;
+        }
+
+        .ganttview-blocks .ganttview-block-container:first-child, .ganttview-blocks .ganttview-block-container:nth-child(2) {
+            display: none;
+        }
+
+        .legend {
+            margin-bottom: 15px;
+        }
+
+        .legend:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .legend > div {
+            float: left;
+            margin-right: 15px;
+        }
+
+        .legend i {
+            display: inline-block;
+            width: 35px;
+            height: 25px;
+            border-radius: 3px;
+        }
+
+        .legend span {
+            vertical-align: top;
+            line-height: 25px;
+        }
+        .ganttview-vtheader-item-name{
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap
+        }
+        .bold{
+            font-weight: bold;
+            font-size: 15px;
+            color: #232323 ;
+        }
+    </style>
+</head>
+<body>
+<div class="legend">
+    <div class="plan">
+        <i style="background-color: rgb(120, 175, 232) "></i>
+        <span>计划进度</span>
+    </div>
+    <div class="real">
+        <i style="background-color: rgb(102, 202, 145)"></i>
+        <span>实际进度</span>
+    </div>
+    <div class="compare">
+        <i style="background-color: red"></i>
+        <span>实际进度大于计划进度</span>
+    </div>
+</div>
+<div id="ganttChart"></div>
+
+
+<script src="../js/common/jquery-1.11.1.min.js"></script>
+<script src="../layui/layui.js"></script>
+<script src="../js/common/base.js"></script>
+<script src="../js/common/date.js"></script>
+<script src="../js/common/jquery-ui-1.8.4.js"></script>
+<script src="../js/common/jquery.ganttView.js"></script>
+<script src="../js/gantt.js"></script>
+
+
+</body>
+</html>

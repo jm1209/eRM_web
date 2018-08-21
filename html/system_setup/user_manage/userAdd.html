@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>新增用户</title>
+    <link rel="stylesheet" href="../../../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../../../css/public.css"/>
+    <style>
+        .layui-upload {
+            margin-left: 25px;
+        }
+
+        i {
+            color: red;
+        }
+    </style>
+</head>
+<body class="childrenBody">
+<input type="hidden" class="sign"/>
+<form class="layui-form">
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">账号 <i>*</i></label>
+            <div class="layui-input-inline">
+                <input type="text" name="empAccount" class="layui-input" lay-verify="required|accountLength">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">姓名 <i>*</i></label>
+            <div class="layui-input-inline">
+                <input type="text" name="empName" class="layui-input" lay-verify="required|nameLength">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">电话 </label>
+            <div class="layui-input-inline">
+                <input type="text" name="phone" placeholder="请输入电话" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">邮件 <i>*</i></label>
+            <div class="layui-input-inline">
+                <input type="text" lay-verify="required|email" name="email" placeholder="请输入邮件" class="layui-input">
+            </div>
+        </div>
+
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">业主公司</label>
+            <div class="layui-input-inline">
+                <select name="owner" class="owner" lay-filter="owner">
+
+                </select>
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">乙方公司</label>
+            <div class="layui-input-inline">
+                <select name="partyB" class="partyB" lay-filter="partyB">
+
+                </select>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">角色<i>*</i></label>
+            <div class="layui-input-inline">
+                <input type="hidden" name="roleHid" class="roleHid">
+                <select name="role" lay-verify="required" class="role" lay-filter="role">
+
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-upload">
+            <button type="button" class="layui-btn layui-btn-normal" id="test8">选择文件</button>
+            <button type="button" class="layui-btn" id="test9" style="display: none">开始上传</button>
+            <div class="layui-upload-list">
+                <table class="layui-table">
+                    <thead>
+                    <tr>
+                        <th>文件名</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="demoList"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modleBtn">
+        <div class="layui-form-item">
+            <button class="layui-btn layui-btn-normal layui-btn-sm" lay-filter="putin" lay-submit>提交</button>
+
+        </div>
+    </div>
+</form>
+
+<script src="../../../layui/layui.js"></script>
+<script src="../../../js/common/base.js"></script>
+<script src="../../../js/system_setup/user_manage/userAdd.js"></script>
+</body>
+</html>

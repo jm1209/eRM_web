@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html class="loginHtml">
+<head>
+    <meta charset="utf-8">
+    <title>优得新能源</title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_707333_mpmfhj8ej6.css"/>
+    <link rel="stylesheet" href="layui/css/layui.css"/>
+    <link rel="stylesheet" href="css/public.css"/>
+</head>
+<body class="loginBody login_bg">
+<div class="logo"><img src="images/logo.png" width="450"></div>
+
+<div class="login-wrapper">
+    <form class="layui-form">
+        <h1 class="login-title">用户登录</h1>
+        <div class="layui-form-item input-item">
+            <span class="iconfont icon-yonghu"></span>
+            <input type="text" placeholder="账号" name="loginAccount" lay-verify="loginAccount">
+        </div>
+        <div class="layui-form-item input-item">
+            <span class="iconfont icon-suo"></span>
+            <input type="password" placeholder="密码" name="password" lay-verify="password">
+        </div>
+        <div class="layui-form-item">
+            <input type="checkbox" name="remember" lay-filter="remember" lay-skin="primary" title="记住密码">
+            <a href="resetPwd.html" style="float: right;margin-top: 8px">重置密码</a>
+        </div>
+        <div class="layui-form-item login-btn">
+            <button class="layui-btn layui-block" lay-filter="login" lay-submit>登录</button>
+        </div>
+    </form>
+</div>
+
+<div class="login-foot">Copyright © 2018 版权所有：优得新能源科技（宁波）有限公司</div>
+
+<script src="layui/layui.js"></script>
+<script src="js/common/base.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

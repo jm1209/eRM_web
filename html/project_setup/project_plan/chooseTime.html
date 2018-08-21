@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择时间</title>
+    <link rel="stylesheet" href="../../../layui/css/layui.css"/>
+    <style>
+        .layui-inline {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+<div class="site-demo-laydate">
+    <div class="layui-inline" id="test-n1"></div>
+</div>
+
+<script src="../../../layui/layui.js"></script>
+<script>
+    layui.use(["jquery", 'laydate'], function () {
+        var $ = layui.jquery, laydate = layui.laydate;
+
+        //直接嵌套显示
+        laydate.render({
+            elem: '#test-n1',
+            position: 'static',
+            btns: true,
+            range: true,
+            change: function (value, date, endDate) {
+                $('body').attr('time', value)
+            }
+        });
+    })
+</script>
+</body>
+</html>

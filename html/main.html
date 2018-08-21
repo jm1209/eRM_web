@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../css/first.css">
+</head>
+<body class="childrenBody">
+<div class="layui-row">
+    <div class="layui-col-md8 need">
+        <ul>
+
+        </ul>
+    </div>
+    <div class="layui-col-md4 sign">
+        <div class="title">
+            <h2>签到记录</h2>
+            <a href="javascript:;" id="more">查看更多</a>
+        </div>
+        <div class="table">
+            <table>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+    <ul class="layui-tab-title">
+        <li class="layui-this">项目状态</li>
+        <li class="fare">项目缺陷</li>
+        <!--<li>付款节点</li>-->
+    </ul>
+    <div class="layui-tab-content">
+        <div class="layui-tab-item layui-show" id="itemStatus">
+            <div class="mark">
+                <p><i></i>计划工期内完成</p>
+                <p><i></i>轻度逾期</p>
+                <p><i></i>严重逾期</p>
+            </div>
+           <!-- <div class="chart">
+                <div id="statusCharts" class="statusCharts" style="height: 300px"></div>
+            </div>
+            <div class="project-status">
+
+            </div>-->
+
+            <div class="legend pie">
+                <div id="statusCharts" class="statusCharts"></div>
+            </div>
+        </div>
+        <div class="layui-tab-item">
+            <div class="progress">
+                <div id="proCharts"></div>
+            </div>
+            <div class="tableList">
+                <table id="tableList" lay-filter="tableList">
+
+                </table>
+            </div>
+        </div>
+        <!-- <div class="layui-tab-item">
+             <div class="finance">
+                 <div class="state">
+                     <p>启动中</p>
+                     <p>建设中</p>
+                     <p>部分并网</p>
+                     <p>已并网</p>
+                     <p>已移交</p>
+                 </div>
+                 <div class="cut">
+                     <i></i>
+                     <i></i>
+                     <i></i>
+                     <i></i>
+                     <i></i>
+                 </div>
+             </div>
+         </div>-->
+    </div>
+</div>
+
+<script src="../layui/layui.js"></script>
+<script src="../js/common/echarts.min.js"></script>
+<script src="../js/common/base.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

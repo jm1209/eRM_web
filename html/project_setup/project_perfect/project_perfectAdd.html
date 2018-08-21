@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>添加公司</title>
+    <link rel="stylesheet" href="../../../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../../../css/public.css"/>
+</head>
+<style>
+    h1 {
+        padding-bottom: 10px;
+        border-bottom: 1px solid grey;
+        margin-bottom: 10px;
+    }
+
+    .layui-form-label {
+        width: auto;
+    }
+
+    textarea {
+        width: 100%;
+    }
+
+    .modleBtn {
+        position: relative;
+        text-align: center;
+    }
+
+    .layui-form-select .layui-input {
+        color: black;
+    }
+
+    .layui-select-disabled .layui-disabled {
+        color: grey !important;
+    }
+    .msg .layui-input-inline{
+        width: 130px;
+    }
+
+    .surplus{
+        display: none;
+    }
+</style>
+<body class="childrenBody">
+<input type="hidden" class="sign"/>
+<form class="layui-form">
+    <div>
+        <div class="top">
+            <h1>项目基本信息</h1>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">项目编号</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="projectNo" lay-verify="required" class="layui-input projectNo">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">项目名称</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="projectName" lay-verify="required" autocomplete="off"
+                           class="layui-input projectName">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <div class="layui-form-label">项目类型</div>
+                <div class="layui-input-inline">
+                    <select name="projectType" lay-filter="projectType" class="projectType" lay-verify="bitian" disabled>
+                        <option value="1">分布式低压</option>
+                        <option value="2">分布式高压</option>
+                        <option value="3">地面集中式</option>
+                        <option value="4">风电</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="top">
+            <h1>需要补充的信息</h1>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">EPC方公司 <e>*</e></label>
+                <div class="layui-input-inline">
+                    <select name="companyEpc" lay-filter="companyEpc" class="companyEpc" lay-verify="bitian">
+
+                    </select>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">EPC方项目经理</label>
+                <div class="layui-input-inline">
+                    <select name="managerEpc" lay-filter="managerEpc" class="managerEpc" lay-verify="bitian">
+
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">监理方公司<e>*</e></label>
+                <div class="layui-input-inline">
+                    <select name="supervisor" lay-filter="supervisor" class="supervisor" lay-verify="bitian">
+
+                    </select>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">监理方项目经理</label>
+                <div class="layui-input-inline">
+                    <select name="managerSupervisor" lay-filter="managerSupervisor" class="managerSupervisor"
+                            lay-verify="bitian">
+                        <!--<option value="0">项目经理A</option>-->
+                        <!--<option value="1">项目经理B</option>-->
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">屋顶荷载信息是否要确认加固
+                </label>
+                <input type="checkbox" name="reinforceStatus" lay-filter="reinforceStatus" lay-skin="primary"
+                       class="reinforceStatus" id="reinforceStatus">
+                <div class="layui-input-block">
+
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item msg">
+            <div class="layui-inline">
+                <label class="layui-form-label">选择金额类型</label>
+                <div class="layui-input-inline">
+                    <select name="amountType" lay-filter="amountType" class="amountType">
+                        <option value="1">数字</option>
+                        <option value="2">百分比</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">监理方总金额</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="totalAmount" class="totalAmount total layui-input" disabled>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">EPC方总金额</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="totalEpc" class="totalEpc total layui-input" disabled>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item msg">
+            <div class="layui-inline" style="width: 254px">
+                <label class="layui-form-label"></label>
+                <div class="layui-input-inline">
+
+                </div>
+            </div>
+            <div class="layui-inline surplus">
+                <label class="layui-form-label"><span style="width: 83px;display: block">监理方剩余</span></label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input jlLeave" disabled>
+                </div>
+            </div>
+            <div class="layui-inline surplus">
+                <label class="layui-form-label"><span style="width: 85px;display: block">epc方剩余</span></label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input epcLeave" disabled>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item msg_txt"><span></span></div>
+        <div class="layui-form-item">
+            <table class="layui-table money">
+                <thead>
+                <tr>
+                    <th lay-data="{width:80}">节点</th>
+                    <th lay-data="{width:120}">监理方</th>
+                    <th lay-data="{width:120}">EPC方</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th>启动中</th>
+                    <th>
+                        <input type="text" name="startVision" class="layui-input jl" placeholder="请输入">
+                    </th>
+                    <th>
+                        <input type="text" name="startEpc" class="layui-input epc" placeholder="请输入">
+                    </th>
+                </tr>
+                <tr>
+                    <th>建设中</th>
+                    <th>
+                        <input type="text" name="buildVision" class="layui-input jl" placeholder="请输入">
+                    </th>
+                    <th>
+                        <input type="text" name="buildEpc" class="layui-input epc" placeholder="请输入">
+                    </th>
+                </tr>
+                <tr>
+                    <th>部分并网</th>
+                    <th>
+                        <input type="text" name="partVision" class="layui-input jl" placeholder="请输入">
+                    </th>
+                    <th>
+                        <input type="text" name="partEpc" class="layui-input epc" placeholder="请输入">
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        试运行
+                    </th>
+                    <th>
+                        <input type="text" name="testVision" class="layui-input jl" placeholder="请输入">
+                    </th>
+                    <th>
+                        <input type="text" name="testEpc" class="layui-input epc" placeholder="请输入">
+                    </th>
+                </tr>
+                <tr>
+                    <th>正式运行</th>
+                    <th>
+                        <input type="text" name="formalVision" class="layui-input jl" placeholder="请输入">
+                    </th>
+                    <th>
+                        <input type="text" name="formalEpc" class="layui-input epc" placeholder="请输入">
+                    </th>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">备注</label>
+
+            </div>
+            <div class="layui-block">
+                <textarea name="remark" lay-filter="remark" placeholder="请输入" class="layui-textarea remark"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="modleBtn">
+        <div class="layui-form-item">
+            <button class="layui-btn layui-btn-normal layui-btn-sm" lay-filter="addOrEdit" lay-submit>提交</button>
+        </div>
+    </div>
+</form>
+
+<script src="../../../layui/layui.js"></script>
+<script src="../../../js/common/base.js"></script>
+<script src="../../../js/project_system/project_perfect/project_perfectAdd.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>公司管理</title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_707333_cqwb71jatln.css">
+    <link rel="stylesheet" href="../../../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../../../css/public.css"/>
+</head>
+<body class="childrenBody">
+<form class="layui-form">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">监理公司</li>
+            <li>epc公司</li>
+        </ul>
+        <div class="layui-tab-content" style="height: 100px;">
+            <div class="layui-tab-item layui-show">
+                <blockquote class="layui-elem-quote quoteBox">
+                    <div class="layui-inline">
+                        <div class="layui-btn jlScreen">
+                            <i class="iconfont icon-shaixuan"></i>
+                            <span>筛选</span>
+                        </div>
+                    </div>
+                    <div class="layui-inline addShow">
+                        <a class="layui-btn layui-btn-normal add_btn">
+                            <i class="layui-icon">&#xe61f;</i>
+                            新增
+                        </a>
+                    </div>
+                    <div class="layui-inline delShow">
+                        <a class="layui-btn layui-btn-danger layui-btn-normal jlDel">
+                            <i class="layui-icon">&#xe640;</i>
+                            删除
+                        </a>
+                    </div>
+                    <div class="jl-wrapper">
+                        <div class="wrapper">
+                            <div class="layui-row row">
+                                <div class="layui-col-md3 screen-title">公司名称</div>
+                                <div class="layui-col-md9">
+                                    <input type="text" class="layui-input jlName" placeholder="请输入公司名称">
+                                </div>
+                            </div>
+                            <div class="screenBtn">
+                                <a class="layui-btn jlBtn">搜索</a>
+                                <a class="layui-btn jlReset">重置</a>
+                            </div>
+                        </div>
+                    </div>
+                </blockquote>
+                <!--表格数据-->
+                <table id="jlTable" lay-filter="jlTable"></table>
+            </div>
+            <div class="layui-tab-item">
+                <blockquote class="layui-elem-quote quoteBox">
+                    <div class="layui-inline">
+                        <div class="layui-btn epcScreen">
+                            <i class="iconfont icon-shaixuan"></i>
+                            <span>筛选</span>
+                        </div>
+                    </div>
+                    <div class="layui-inline addShow">
+                        <a class="layui-btn layui-btn-normal add_btn">
+                            <i class="layui-icon">&#xe61f;</i>
+                            新增
+                        </a>
+                    </div>
+                    <div class="layui-inline delShow">
+                        <a class="layui-btn layui-btn-danger layui-btn-normal epcDel">
+                            <i class="layui-icon">&#xe640;</i>
+                            删除
+                        </a>
+                    </div>
+                    <div class="epc-wrapper">
+                        <div class="wrapper">
+                            <div class="layui-row row">
+                                <div class="layui-col-md3 screen-title">公司名称</div>
+                                <div class="layui-col-md9">
+                                    <input type="text" class="layui-input epcName" placeholder="请输入公司名称">
+                                </div>
+                            </div>
+                            <div class="screenBtn">
+                                <a class="layui-btn epcBtn">搜索</a>
+                                <a class="layui-btn epcReset">重置</a>
+                            </div>
+                        </div>
+                    </div>
+                </blockquote>
+                <!--表格数据-->
+                <table id="epcTable" lay-filter="epcTable"></table>
+            </div>
+        </div>
+    </div>
+
+    <!--操作-->
+    <script type="text/html" id="listBar">
+        <a class="layui-btn layui-btn-xs layui-btn-primary" lay-event="edit">编辑</a>
+    </script>
+</form>
+
+<script src="../../../layui/layui.js"></script>
+<script src="../../../js/common/base.js"></script>
+<script src="../../../js/system_setup/dept_manage/dept.js"></script>
+</body>
+</html>

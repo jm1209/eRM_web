@@ -1,0 +1,126 @@
+body {
+    background-color: #e9ecf3;
+    padding: 10px;
+}
+
+.taskBox {
+    border-radius: 4px;
+    overflow: hidden;
+
+}
+
+.task-title:after, .item-row:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.task-title {
+    background-color: #009688;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+}
+
+.task-title .name {
+    float: left;
+    margin-left: 15px;
+}
+
+.task-title .layui-icon {
+    float: left;
+    margin-left: 15px;
+}
+
+.list {
+    background-color: #fff;
+    padding-bottom: 15px;
+}
+
+.item-row .item-col {
+    float: left;
+    width: 33%;
+    text-align: center;
+    height: 45px;
+}
+
+.item-row .item-col input {
+    height: 25px;
+    margin-top: 7px;
+}
+
+.item-row .item-col span {
+    display: inline-block;
+    height: 45px;
+    line-height: 45px;
+    vertical-align: top;
+}
+
+.item-row .item-col span:first-child {
+    text-align: right;
+    margin-right: 10px;
+    width: 30%;
+}
+
+.item-row .item-col span:last-child {
+    text-align: left;
+    width: 60%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap
+}
+
+.layui-input-block {
+    width: 60%;
+}
+
+.task-list {
+    margin-bottom: 10px;
+}
+
+.list {
+    display: none;
+}
+
+.fileList {
+    padding: 10px;
+}
+
+.layui-table td {
+    text-align: center;
+}
+
+.button {
+    margin: 25px 0;
+    text-align: center;
+}
+
+.top h1 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.top > p {
+    margin: 10px;
+}
+
+.layui-icon {
+    transition: all 0.5s;
+}
+
+e {
+    color: red;
+}
+
+.dangerLevel{
+    width: 100px;
+    height: 29px;
+}
+.isPass{
+    width: 100px;
+    height: 29px;
+}
+.realRate{
+    width: 96px;
+    height: 29px;
+}

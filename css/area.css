@@ -1,0 +1,54 @@
+.list-group {
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+.list-group-item:first-child {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url(../fonts/resource/glyphicons-halflings-regular.eot);
+    src: url(../fonts/resource/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/resource/glyphicons-halflings-regular.woff2) format('woff2'),
+    url(../fonts/resource/glyphicons-halflings-regular.woff) format('woff'),
+    url(../fonts/resource/glyphicons-halflings-regular.ttf) format('truetype'),
+    url(../fonts/resource/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg')
+}
+
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+.glyphicon-minus:before {
+    content: "\2212"
+}
+.glyphicon-plus:before {
+    content: "\002b"
+}

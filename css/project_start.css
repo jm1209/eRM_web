@@ -1,0 +1,107 @@
+
+input, select {
+    border: none;
+    outline: none;
+}
+
+.lay-item {
+    margin-bottom: 20px;
+}
+
+.lay-item:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.lay-inine {
+    float: left;
+    margin-left: 30px;
+}
+
+.lay-name {
+    display: inline-block;
+    width: 80px;
+    height: 35px;
+    line-height: 35px;
+    vertical-align: top;
+}
+
+.lay-input {
+    display: inline-block;
+    width: 180px;
+}
+
+.lay-input input, .lay-input select {
+    display: inline-block;
+    width: 100%;
+    border: 1px solid #999999;
+    height: 33px;
+}
+
+.lay-textarea {
+    margin-left: 30px;
+}
+
+.lay-textarea textarea {
+    width: 1060px;
+    height: 96px;
+}
+
+i {
+    color: red;
+}
+
+.info-wrapper {
+    background-color: #fff;
+    padding: 20px 60px;
+    margin-bottom: 10px;
+}
+
+td {
+    text-align: center;
+}
+
+.info-wrapper .top:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+
+.info-wrapper .top {
+    border-bottom: 1px solid #CCCCCC;
+    padding-bottom: 10px;
+}
+
+.info-wrapper .top h2 {
+    float: left;
+}
+
+.info-wrapper .top button {
+    float: left;
+    margin-left: 25px;
+}
+
+.info-wrapper > h3 {
+    margin: 15px 0;
+}
+
+.info-wrapper textarea {
+    width: 100%;
+    height: 96px;
+}
+
+.button {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.uploadok {
+    color: #5FB878;
+}
+
+@media screen and (max-width: 1400px) {
+   .lay-inine{
+       margin-bottom: 15px;
+   }
+}

@@ -1,0 +1,2202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>分布式低压并网 </title>
+    <link rel="stylesheet" href="../../../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../../../css/public.css"/>
+    <link rel="stylesheet" href="../../../css/plane.css"/>
+</head>
+<body>
+<input type="hidden" class="sign"/>
+<div class="fixed">
+    <div class="thead">
+        <div class="head win5">序号</div>
+        <div class="head win7">任务名称</div>
+        <div class="head win7">填写属性</div>
+        <div class="head win8">进度过程等级</div>
+        <div class="head win8">进度节点等级</div>
+        <div class="head win7">缺陷等级</div>
+        <div class="head win10">开始时间</div>
+        <div class="head win10">结束时间</div>
+        <div class="head win10">特征</div>
+        <div class="head win7">文件描述</div>
+        <div class="head win7">文件类型</div>
+        <div class="head win7">负责人</div>
+        <div class="head win7">操作</div>
+    </div>
+</div>
+
+<div class="top">
+    <div class="layui-form-item">
+        <div class="layui-col-md3">
+            <label class="layui-form-label">项目编号</label>
+            <div class="layui-input-block">
+                <input type="text" class="isChange layui-input projectNo" disabled>
+            </div>
+        </div>
+        <div class="layui-col-md3">
+            <label class="layui-form-label">项目名称</label>
+            <div class="layui-input-block">
+                <input type="text" class="isChange layui-input projectName" disabled>
+            </div>
+        </div>
+        <div class="layui-col-md3">
+            <label class="layui-form-label">项目类型</label>
+            <div class="layui-input-block">
+                <input type="text" class="isChange layui-input projectType" disabled>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item" style="margin-bottom: 0">
+        <div class="layui-col-md3">
+            <label class="layui-form-label">并网容量</label>
+            <div class="layui-input-block">
+                <input type="text" class="isChange layui-input capacity" disabled>
+            </div>
+        </div>
+        <div class="layui-col-md3">
+            <label class="layui-form-label">并网时间</label>
+            <div class="layui-input-block">
+                <input type="text" class="isChange layui-input connectGridTime" disabled>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="thead">
+        <div class="head win5">序号</div>
+        <div class="head win7">任务名称</div>
+        <div class="head win7">填写属性</div>
+        <div class="head win8">进度过程等级</div>
+        <div class="head win8">进度节点等级</div>
+        <div class="head win7">缺陷等级</div>
+        <div class="head win10">开始时间</div>
+        <div class="head win10">结束时间</div>
+        <div class="head win10">特征</div>
+        <div class="head win7">文件描述</div>
+        <div class="head win7">文件类型</div>
+        <div class="head win7">负责人</div>
+        <div class="head win7">操作</div>
+    </div>
+    <div class="initial idDel item">
+        <div class="item-title" onclick="slide(this)">
+            <i class="layui-icon">&#xe602;</i>
+            <div class="num itemNo">1.1</div>
+            <div class="name"><input class="itemName" type="text" value="工程设计"
+                                     onclick="javascript: event.stopPropagation();"></div>
+            <div class="btn">
+                <a href="javascript:;" class="pCopy" onclick="pCopy(this)">复制</a>
+                <a href="javascript:;" class="pDel" onclick="pDel(this)">删除</a>
+            </div>
+        </div>
+        <div class="list">
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.1.1</div>
+                <div class="body win7 name"><input type="text" value="关键设备技术规范编制"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="节点交付">节点交付</option>
+                        <option value="累计交付">累计交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="">请选择</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="技术协议,word">技术协议,word</div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.1.2</div>
+                <div class="body win7 name"><input type="text" value="施工图图纸编制"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="节点交付">节点交付</option>
+                        <option value="累计交付">累计交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="">请选择</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="图纸,PDF&dwg">图纸,PDF&dwg</div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.1.3</div>
+                <div class="body win7 name"><input type="text" value="施工图提交屋顶业主审核"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="节点交付">节点交付</option>
+                        <option value="累计交付">累计交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="">请选择</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="">请选择</option>
+                        <option value="前置">前置</option>
+                        <option value="后置">后置</option>
+                    </select>
+                </div>
+                <div class="body win7"></div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.1.4</div>
+                <div class="body win7 name"><input type="text" value="施工图双方确认"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="节点交付">节点交付</option>
+                        <option value="累计交付">累计交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="">请选择</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="确认邮件或书面文件,msg&PDF">确认邮件或书面文件,msg&PDF</div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="initial idDel item">
+        <div class="item-title" onclick="slide(this)">
+            <i class="layui-icon">&#xe602;</i>
+            <div class="num itemNo">1.2</div>
+            <div class="name"><input class="itemName" type="text" value="施工准备"
+                                     onclick="javascript: event.stopPropagation();"></div>
+            <div class="btn">
+                <a href="javascript:;" class="pCopy" onclick="pCopy(this)" onclick="pCopy(this)">复制</a>
+                <a href="javascript:;" class="pDel" onclick="pDel(this)">删除</a>
+            </div>
+        </div>
+        <div class="list">
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.2.1</div>
+                <div class="body win7 name"><input type="text" value="项目现场场外协调"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="节点交付">节点交付</option>
+                        <option value="累计交付">累计交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="">请选择</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="现场准备照片,jpg&PDF">现场准备照片,jpg&PDF</div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.2.2</div>
+                <div class="body win7 name"><input type="text" value="工机具及劳保用品准备"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="节点交付">节点交付</option>
+                        <option value="累计交付">累计交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="">请选择</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="设备校验证书及合格证,PDF">设备校验证书及合格证,PDF</div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.2.3</div>
+                <div class="body win7 name"><input type="text" value="工人组织"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="节点交付">节点交付</option>
+                        <option value="累计交付">累计交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="">请选择</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="人员清单及资质证书,PDF">人员清单及资质证书,PDF</div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.2.4</div>
+                <div class="body win7 name"><input type="text" value="工人培训"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="节点交付">节点交付</option>
+                        <option value="累计交付">累计交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="">请选择</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="培训资料及记录,PDF">培训资料及记录,PDF</div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.2.5</div>
+                <div class="body win7 name"><input type="text" value="施工机械进场"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="节点交付">节点交付</option>
+                        <option value="累计交付">累计交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="">请选择</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <!-- <div class="body win10">
+                     <input type="text" class="isChange planEnd" onclick="planTime(this)">
+                 </div>-->
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="现场实拍照片,jpg">现场实拍照片,jpg</div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="initial idDel item">
+        <div class="item-title" onclick="slide(this)">
+            <i class="layui-icon">&#xe602;</i>
+            <div class="num itemNo">1.3</div>
+            <div class="name"><input class="itemName" type="text" value="主要设备采购"
+                                     onclick="javascript: event.stopPropagation();"></div>
+            <div class="btn">
+                <a href="javascript:;" class="pCopy" onclick="pCopy(this)">复制</a>
+                <a href="javascript:;" class="pDel" onclick="pDel(this)">删除</a>
+            </div>
+        </div>
+        <div class="list">
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.3.1</div>
+                <div class="body win7 name"><input type="text" value="配套材料采购"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="累计交付">累计交付</option>
+                        <option value="节点交付">节点交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="2">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="合格证及出厂检验报告等,PDF">合格证及出厂检验报告等,PDF</div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.3.2</div>
+                <div class="body win7 name"><input type="text" value="支架采购"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="累计交付">累计交付</option>
+                        <option value="节点交付">节点交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire"
+                     title="签字版技术协议及相关资料（包括但不限于产品说明书、使用手册合格证、出厂检验报告、型式试验报告、认证证书、质保声明等）,PDF">
+                    签字版技术协议及相关资料（包括但不限于产品说明书、使用手册合格证、出厂检验报告、型式试验报告、认证证书、质保声明等）,PDF
+                </div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.3.3</div>
+                <div class="body win7 name"><input type="text" value="组件采购"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="累计交付">累计交付</option>
+                        <option value="节点交付">节点交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire"
+                     title="签字版技术协议及相关资料（包括但不限于产品说明书、使用手册合格证、出厂检验报告、型式试验报告、认证证书、质保声明等）,PDF">
+                    签字版技术协议及相关资料（包括但不限于产品说明书、使用手册合格证、出厂检验报告、型式试验报告、认证证书、质保声明等）,PDF
+                </div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.3.4</div>
+                <div class="body win7 name"><input type="text" value="逆变器采购"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="累计交付">累计交付</option>
+                        <option value="节点交付">节点交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire"
+                     title="签字版技术协议及相关资料（包括但不限于产品说明书、使用手册合格证、出厂检验报告、型式试验报告、认证证书、质保声明等）,PDF">
+                    签字版技术协议及相关资料（包括但不限于产品说明书、使用手册合格证、出厂检验报告、型式试验报告、认证证书、质保声明等）,PDF
+                </div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.3.5</div>
+                <div class="body win7 name"><input type="text" value="汇流箱采购"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="累计交付">累计交付</option>
+                        <option value="节点交付">节点交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire"
+                     title="签字版技术协议及相关资料（包括但不限于产品说明书、使用手册合格证、出厂检验报告、型式试验报告、认证证书、质保声明等）,PDF">
+                    签字版技术协议及相关资料（包括但不限于产品说明书、使用手册合格证、出厂检验报告、型式试验报告、认证证书、质保声明等）,PDF
+                </div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.3.6</div>
+                <div class="body win7 name"><input type="text" value="桥架采购"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="累计交付">累计交付</option>
+                        <option value="节点交付">节点交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7" title="签字版技术协议及相关资料（包括但不限于产品说明书、使用手册合格证、出厂检验报告、型式试验报告、认证证书、质保声明等）,PDF">
+                    签字版技术协议及相关资料（包括但不限于产品说明书、使用手册合格证、出厂检验报告、型式试验报告、认证证书、质保声明等）,PDF
+                </div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.3.7</div>
+                <div class="body win7 name"><input type="text" value="防雷接地材料采购"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="累计交付">累计交付</option>
+                        <option value="节点交付">节点交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="">请选择</option>
+                        <option value="前置">前置</option>
+                        <option value="后置">后置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="签字版技术协议及相关资料（包括但不限于产品说明书、使用手册合格证、出厂检验报告、型式试验报告、认证证书、质保声明等）">
+                    签字版技术协议及相关资料（包括但不限于产品说明书、使用手册合格证、出厂检验报告、型式试验报告、认证证书、质保声明等）
+                </div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.3.8</div>
+                <div class="body win7 name"><input type="text" value="线缆采购（光伏线缆、电力线缆、控制线缆等）"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="累计交付">累计交付</option>
+                        <option value="节点交付">节点交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire"
+                     title="签字版技术协议及相关资料（包括但不限于产品说明书、使用手册合格证、出厂检验报告、型式试验报告、认证证书、质保声明等）,PDF">
+                    签字版技术协议及相关资料（包括但不限于产品说明书、使用手册合格证、出厂检验报告、型式试验报告、认证证书、质保声明等）,PDF
+                </div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.3.9</div>
+                <div class="body win7 name"><input type="text" value="安防监控系统采购"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="累计交付">累计交付</option>
+                        <option value="节点交付">节点交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="2">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire"
+                     title="签字版技术协议及相关资料（包括但不限于产品说明书、使用手册合格证、出厂检验报告、型式试验报告、认证证书、质保声明等）,PDF">
+                    签字版技术协议及相关资料（包括但不限于产品说明书、使用手册合格证、出厂检验报告、型式试验报告、认证证书、质保声明等）,PDF
+                </div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.3.10</div>
+                <div class="body win7 name"><input type="text" value="远程监控系统采购"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="累计交付">累计交付</option>
+                        <option value="节点交付">节点交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="">请选择</option>
+                        <option value="前置">前置</option>
+                        <option value="后置">后置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="签字版技术协议及相关资料（包括但不限于产品说明书、使用手册合格证、出厂检验报告、型式试验报告、认证证书、质保声明等）">
+                    签字版技术协议及相关资料（包括但不限于产品说明书、使用手册合格证、出厂检验报告、型式试验报告、认证证书、质保声明等）
+                </div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.3.11</div>
+                <div class="body win7 name"><input type="text" value="并网柜采购"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="累计交付">累计交付</option>
+                        <option value="节点交付">节点交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire"
+                     title="签字版技术协议及相关资料（包括但不限于产品说明书、使用手册合格证、出厂检验报告、型式试验报告、认证证书、质保声明等）,PDF">
+                    签字版技术协议及相关资料（包括但不限于产品说明书、使用手册合格证、出厂检验报告、型式试验报告、认证证书、质保声明等）,PDF
+                </div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.3.12</div>
+                <div class="body win7 name"><input type="text" value="运营物资采购（工器具及备品备件）"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="累计交付">累计交付</option>
+                        <option value="节点交付">节点交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="2">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire"
+                     title="签字版技术协议及相关资料（包括但不限于产品说明书、使用手册合格证、出厂检验报告、型式试验报告、认证证书、质保声明等）,PDF">
+                    签字版技术协议及相关资料（包括但不限于产品说明书、使用手册合格证、出厂检验报告、型式试验报告、认证证书、质保声明等）,PDF
+                </div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="initial idDel item">
+        <div class="item-title" onclick="slide(this)">
+            <i class="layui-icon">&#xe602;</i>
+            <div class="num itemNo">1.4</div>
+            <div class="name"><input class="itemName" type="text" value="项目施工--X并网点"
+                                     onclick="javascript: event.stopPropagation();"></div>
+            <div class="btn">
+                <a href="javascript:;" class="pCopy" onclick="pCopy(this)">复制</a>
+                <a href="javascript:;" class="pDel" onclick="pDel(this)">删除</a>
+            </div>
+        </div>
+        <div class="list">
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.4.1</div>
+                <div class="body win7 name"><input type="text" value="屋面测量放线工作"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="累计交付">累计交付</option>
+                        <option value="节点交付">节点交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1" defNo="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="前置">前置</option>
+                        <option value="后置">后置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="前：控制方案，中：控制过程，后：自检记录,PDF">前：控制方案，中：控制过程，后：自检记录,PDF</div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.4.2</div>
+                <div class="body win7 name"><input type="text" value="安防设施安装【爬梯、生命线、运维通道等】（含材料检验批）"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="累计交付">累计交付</option>
+                        <option value="节点交付">节点交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1" defNo="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7" title="材料检验批记录和安装后检查检测记录">材料检验批记录和安装后检查检测记录</div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.4.3</div>
+                <div class="body win7 name"><input type="text" value="支架安装（含材料检验批）"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="累计交付">累计交付</option>
+                        <option value="节点交付">节点交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7" title="材料检验批记录和安装后检查检测记录,PDF">材料检验批记录和安装后检查检测记录,PDF</div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.4.4</div>
+                <div class="body win7 name"><input type="text" value="桥架敷设（含材料检验批）"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="累计交付">累计交付</option>
+                        <option value="节点交付">节点交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="材料检验批记录和安装后检查检测记录,PDF">材料检验批记录和安装后检查检测记录,PDF</div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.4.5</div>
+                <div class="body win7 name"><input type="text" value="组件安装（含到货检要求）"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="累计交付">累计交付</option>
+                        <option value="节点交付">节点交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="前置">前置</option>
+                        <option value="后置">后置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="前：控制方案，中：控制过程，后：自检记录包含设备到货检测及安装后检测的第三方报告,PDF">
+                    前：控制方案，中：控制过程，后：自检记录包含设备到货检测及安装后检测的第三方报告,PDF
+                </div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.4.6</div>
+                <div class="body win7 name"><input type="text" value="并网柜安装"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="累计交付">累计交付</option>
+                        <option value="节点交付">节点交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="安装后检查记录、检测记录及试验报告,PDF">安装后检查记录、检测记录及试验报告,PDF</div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.4.7</div>
+                <div class="body win7 name"><input type="text" value="线缆敷设（含材料检验批）"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="累计交付">累计交付</option>
+                        <option value="节点交付">节点交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="前置">前置</option>
+                        <option value="后置">后置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="前：控制方案，中：控制过程，后：自检记录包含材料检验批记录及隐蔽工程旁站记录,PDF">
+                    前：控制方案，中：控制过程，后：自检记录包含材料检验批记录及隐蔽工程旁站记录,PDF
+                </div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.4.8</div>
+                <div class="body win7 name"><input type="text" value="汇流箱、逆变器安装"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="累计交付">累计交付</option>
+                        <option value="节点交付">节点交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="前：控制方案，中：控制过程，后：自检记录包含材料检验批记录及隐蔽工程旁站记录,PDF">
+                    安装后检查记录、检测记录及试验报告，PDF
+                </div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.4.9</div>
+                <div class="body win7 name"><input type="text" value="防雷接地安装（含材料检验批）"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="累计交付">累计交付</option>
+                        <option value="节点交付">节点交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="材料检验批记录和安装后检查检测记录,PDF">材料检验批记录和安装后检查检测记录,PDF</div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.4.10</div>
+                <div class="body win7 name"><input type="text" value="安防监控设备安装"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="累计交付">累计交付</option>
+                        <option value="节点交付">节点交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="2">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="安装后检查记录、检测记录及测试报告,PDF">安装后检查记录、检测记录及测试报告,PDF</div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.4.11</div>
+                <div class="body win7 name"><input type="text" value="远程监控系统安装"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="累计交付">累计交付</option>
+                        <option value="节点交付">节点交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="安装后检查记录、检测记录及测试报告,PDF">安装后检查记录、检测记录及测试报告,PDF</div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="initial idDel item">
+        <div class="item-title" onclick="slide(this)">
+            <i class="layui-icon">&#xe602;</i>
+            <div class="num itemNo">1.5</div>
+            <div class="name"><input class="itemName" style="width: 230px;" type="text" value="验收、系统调试、试运行及移交"
+                                     onclick="javascript: event.stopPropagation();"></div>
+            <div class="btn">
+                <a href="javascript:;" class="pCopy" onclick="pCopy(this)">复制</a>
+                <a href="javascript:;" class="pDel" onclick="pDel(this)">删除</a>
+            </div>
+        </div>
+        <div class="list">
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.5.1</div>
+                <div class="body win7 name"><input type="text" value="内部验收"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="节点交付">节点交付</option>
+                        <option value="累计交付">累计交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="">请选择</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="内部验收报告,PDF">内部验收报告,PDF</div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.5.2</div>
+                <div class="body win7 name"><input type="text" value="电网公司验收及配套施工"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="节点交付">节点交付</option>
+                        <option value="累计交付">累计交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="">请选择</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="验收报告或通知,PDF">验收报告或通知,PDF</div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.5.3</div>
+                <div class="body win7 name"><input type="text" value="系统调试及消缺"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="节点交付">节点交付</option>
+                        <option value="累计交付">累计交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="">请选择</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="前置">前置</option>
+                        <option value="后置">后置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="前：控制方案，中：控制过程，后：调试记录包含缺陷登记表和承诺消缺承诺,PDF">
+                    前：控制方案，中：控制过程，后：调试记录包含缺陷登记表和承诺消缺承诺,PDF
+                </div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.5.4</div>
+                <div class="body win7 name"><input type="text" value="投运准备"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="节点交付">节点交付</option>
+                        <option value="累计交付">累计交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="">请选择</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="包含制度、备品备件、工具、人员、投运方案和应急预案等各方面的准备工作,PDF">
+                    包含制度、备品备件、工具、人员、投运方案和应急预案等各方面的准备工作,PDF
+                </div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.5.5</div>
+                <div class="body win7 name"><input type="text" value="系统并网"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="节点交付">节点交付</option>
+                        <option value="累计交付">累计交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="">请选择</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="并网照片（现场+电表）,jpg">并网照片（现场+电表）,jpg</div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.5.6</div>
+                <div class="body win7 name"><input type="text" value="系统试运行"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="节点交付">节点交付</option>
+                        <option value="累计交付">累计交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="">请选择</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="前置">前置</option>
+                        <option value="后置">后置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="前：运行方案，中：运行记录，后：运行总结,PDF">前：运行方案，中：运行记录，后：运行总结,PDF</div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.5.7</div>
+                <div class="body win7 name"><input type="text" value="竣工图纸及资料编制"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="节点交付">节点交付</option>
+                        <option value="累计交付">累计交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="">请选择</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="2">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7" title="竣工资料清单,PDF">竣工资料清单,PDF</div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.5.8</div>
+                <div class="body win7 name"><input type="text" value="资料、物资及实体移交验收"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="节点交付">节点交付</option>
+                        <option value="累计交付">累计交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="">请选择</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="后置">后置</option>
+                        <option value="前置">前置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="资料移交清单、物资移交清单及实体移交确认书，PDF">资料移交清单、物资移交清单及实体移交确认书，PDF</div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7 lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+            <div class="initial item-list subDel">
+                <div class="body win5 num">1.5.9</div>
+                <div class="body win7 name"><input type="text" value="正式移交"></div>
+                <div class="body win7">
+                    <select class="isChange fill">
+                        <option value="节点交付">节点交付</option>
+                        <option value="累计交付">累计交付</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange process">
+                        <option value="">请选择</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="body win8">
+                    <select class="isChange node">
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="body win7">
+                    <select class="isChange defect" danger="1">
+
+                    </select>
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planStart chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <input type="text" class="isChange planEnd chooseTime" onclick="planTime(this)">
+                </div>
+                <div class="body win10">
+                    <select class="isChange feature">
+                        <option value="">请选择</option>
+                        <option value="前置">前置</option>
+                        <option value="后置">后置</option>
+                    </select>
+                </div>
+                <div class="body win7 fileRequire" title="无">无</div>
+                <div class="body win7">
+                    <input type="text" class="isChange fileType" placeholder="请选择" onclick="chooseFile(this)">
+                </div>
+                <div class="body win7  lender"></div>
+                <div class="body win7">
+                    <a href="javascript:;" onclick="copy(this)" class="copy">复制</a>
+                    <a href="javascript:;" onclick="del(this)" class="del">删除</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="button">
+    <a href="javascript:;" class="keep layui-btn layui-btn-normal layui-btn-sm">保存</a>
+    <a href="javascript:;" class="hand layui-btn layui-btn-normal layui-btn-sm">提交</a>
+</div>
+
+
+<script src="../../../layui/layui.js"></script>
+<script src="../../../js/common/base.js"></script>
+<script src="../../../js/project_system/project_plan/project_planAdd.js"></script>
+</body>
+</html>

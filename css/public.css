@@ -1,0 +1,536 @@
+/*公共样式*/
+.childrenBody {
+    padding: 10px;
+}
+
+.layui-table-view {
+    margin: 0 !important;
+}
+
+.magb0 {
+    margin-bottom: 0 !important;
+}
+
+.magt0 {
+    margin-top: 0 !important;
+}
+
+.magt3 {
+    margin-top: 3px !important;
+}
+
+.magt10 {
+    margin-top: 10px !important;
+}
+
+.magb15 {
+    margin-bottom: 15px !important;
+}
+
+.magt30 {
+    margin-top: 30px !important;
+}
+
+.layui-left {
+    text-align: left;
+}
+
+.layui-block {
+    width: 100% !important;
+}
+
+.layui-center {
+    text-align: center;
+}
+
+.layui-right {
+    text-align: right;
+}
+
+.layui-elem-quote.title {
+    padding: 10px 15px;
+    margin-bottom: 0;
+}
+
+.layui-bg-white {
+    background-color: #fff !important;
+}
+
+.border {
+    border: 1px solid #e6e6e6 !important;
+    padding: 10px;
+    border-top: none;
+}
+
+.main_btn .layui-btn {
+    margin: 2px 5px 2px 0;
+}
+
+.layui-timeline-axis {
+    left: -4px;
+}
+
+.layui-elem-quote {
+    word-break: break-all;
+    position: relative
+}
+
+.icons li, .icons li:hover, .loginBody .seraph, .loginBody .seraph:hover, .loginBody .layui-form-item.layui-input-focus label, .loginBody .layui-form-item label, .loginBody .layui-form-item.layui-input-focus input, .loginBody .layui-form-item input {
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+
+.icons li:hover i, .icons li i {
+    transition: font-size 0.3s ease-in-out;
+    -webkit-transition: font-size 0.3s ease-in-out;
+}
+
+.loginBody .layui-input-focus .layui-input::-webkit-input-placeholder {
+    transition: color 0.2s linear 0.2s;
+    -webkit-transition: color 0.2s linear 0.2s;
+}
+
+.loginBody .layui-input-focus .layui-input::-moz-placeholder {
+    transition: color 0.2s linear 0.2s;
+}
+
+.loginBody .layui-input-focus .layui-input:-ms-input-placeholder {
+    transition: color 0.2s linear 0.2s;
+}
+
+.loginBody .layui-input-focus .layui-input::placeholder {
+    transition: color 0.2s linear 0.2s;
+    -webkit-transition: color 0.2s linear 0.2s;
+}
+
+.modleBtn {
+    position: fixed;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/*后台首页*/
+.panel_box {
+    margin-bottom: 5px;
+}
+
+.panel {
+    text-align: center;
+    height: 90px;
+}
+
+.panel_box a {
+    display: block;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 80px;
+    background-color: #f2f2f2 !important;
+}
+
+.panel_icon {
+    width: 40%;
+    display: inline-block;
+    line-height: 80px;
+    float: left;
+    position: relative;
+    height: 100%;
+}
+
+.panel_icon i {
+    font-size: 40px !important;
+    color: #fff;
+    display: inline-block;
+}
+
+.panel_word {
+    width: 60%;
+    display: inline-block;
+    float: right;
+    margin: 13px 0 14px;
+}
+
+.panel_word span {
+    font-size: 25px;
+    display: block;
+    height: 34px;
+}
+
+.panel .loginTime {
+    font-size: 15px;
+    color: #1E9FFF;
+    line-height: 17px;
+}
+
+.panel em {
+    font-style: normal;
+}
+
+.history_box {
+    min-height: 500px;
+    height: 500px;
+    overflow-y: scroll;
+    padding: 10px !important;
+}
+
+.history_box .layui-timeline .layui-timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.mtop {
+    margin-top: 125px
+}
+
+.mtop115 {
+    margin-top: 115px
+}
+
+@media screen and (max-width: 1200px) {
+    .history_box {
+        height: auto !important;
+        overflow-y: inherit;
+    }
+}
+
+/*修改密码*/
+.pwdTips {
+    margin: 40px 0 15px 110px;
+}
+
+/*下拉多选*/
+.layui-form-item select[multiple] + .layui-form-select dd {
+    padding: 0;
+}
+
+.layui-form-item select[multiple] + .layui-form-select .layui-form-checkbox[lay-skin=primary] {
+    margin: 0 !important;
+    display: block;
+    line-height: 36px !important;
+    position: relative;
+    padding-left: 26px;
+}
+
+.layui-form-item select[multiple] + .layui-form-select .layui-form-checkbox[lay-skin=primary] span {
+    line-height: 36px !important;
+    float: none;
+}
+
+.layui-form-item select[multiple] + .layui-form-select .layui-form-checkbox[lay-skin=primary] i {
+    position: absolute;
+    left: 10px;
+    top: 0;
+    margin-top: 9px;
+}
+
+/*登录*/
+.loginHtml, .loginBody {
+    height: 100%;
+}
+
+.login_bg {
+    background: url("../images/login_bg.png") center scroll no-repeat;
+    background-size: 100% 100%
+}
+
+.loginBody .logo {
+    position: absolute;
+    left: 50%;
+    top: 80px;
+    transform: translateX(-50%);
+}
+
+.msg_txt span {
+    color: red;
+    padding-left: 280px;
+}
+
+.login-wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.loginBody form.layui-form {
+    padding: 0 20px;
+    width: 400px;
+    height: 365px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%,-50%,0);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 50px #2b3542;
+}
+
+.login-title {
+    margin: 20px 0 0;
+    font-size: 18px;
+    font-weight: normal
+}
+
+.login-wrapper .input-item {
+    width: 100%;
+    height: 43px;
+    border-radius: 5px;
+    border: 1px solid #c3c3c3;
+    margin-top: 30px
+}
+
+.login-wrapper .input-item span {
+    display: inline-block;
+    width: 43px;
+    height: 100%;
+    text-align: center;
+    line-height: 45px;
+    border-right: 1px solid #c3c3c3;
+    font-size: 22px;
+    color: #bebebe
+}
+
+.login-wrapper .input-item input {
+    border: none;
+    outline: none;
+    height: 100%;
+    vertical-align: top;
+    margin-left: 10px
+}
+
+.login-btn {
+    margin-top: 50px
+}
+
+.login-foot {
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    line-height: 50px;
+    width: 100%;
+    color: #fff
+}
+
+/*响应式*/
+@media screen and (max-width: 450px) {
+    #userFaceBtn {
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+        font-size: 12px;
+    }
+
+    .user_right img#userFace {
+        width: 100px;
+        height: 100px;
+        margin-top: 0;
+    }
+
+    .layui-col-xs12 .layui-form-label {
+        width: 60px;
+        padding-left: 0;
+    }
+
+    .layui-col-xs12 .layui-input-block, .layui-col-xs12 .layui-input-inline {
+        margin-left: 75px;
+    }
+
+    .layui-col-xs12 .layui-input-inline {
+        left: 0 !important;
+        width: auto !important;
+    }
+
+    .noFind {
+        padding-top: 0;
+    }
+
+    *[pc] {
+        display: none;
+    }
+}
+
+/*改变zTree控件的默认样式*/
+.grant_title {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 15px
+}
+
+.treeBox {
+    height: 265px;
+    overflow-y: auto;
+}
+
+.ztree, .ztree * {
+    background-color: transparent;
+}
+
+.ztree li span.button::before {
+    color: #000;
+}
+
+.ztree li a, .ztree li span.button.ico_open::before, .ztree li span.button.ico_close::before, .ztree li span.button.ico_docu::before {
+    color: #000;
+}
+
+.ztree li span.button.chk.checkbox_false_full_focus::before {
+    color: #000;
+}
+
+.ztree li span.button.chk.checkbox_true_full_focus::before {
+    color: #000;
+}
+
+#tree li {
+    border: 1px solid #aaa;
+}
+
+#tree li ul {
+    padding-left: 0;
+}
+
+#tree li a {
+    margin-left: 6px;
+}
+
+#tree li ul > li {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#tree li > ul li {
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+}
+
+span.level0 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+#tree > li > span:nth-child(1) {
+    margin-left: 8px;
+}
+
+#tree > li > span, #tree > li > a, #tree > li > ul > li > span, #tree > li > ul > li > a, #tree > li > ul > li > ul > li > span, #tree > li > ul > li > ul > li > a {
+    margin-top: 8px;
+}
+
+#tree > li > ul > li > span:nth-child(1) {
+    margin-left: 36px;
+}
+
+#tree > li > ul > li > ul > li > span:nth-child(1) {
+    margin-left: 38px;
+}
+
+/*富文本*/
+.editor {
+    z-index: 0
+}
+
+/*上图图片*/
+.uploadImg {
+    position: relative;
+    width: 196px;
+    height: 76px
+}
+
+.uploadImg img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0)
+}
+
+.uploadImgSize {
+    line-height: 135px;
+}
+
+.closeImg {
+    font-size: 26px !important;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #222 !important;
+}
+
+.showImg {
+    display: none
+}
+
+.comTitle {
+    text-align: center;
+}
+
+.sugImage li {
+    width: 100px;
+    height: 100px;
+}
+
+.sugImage li img {
+    width: 100px;
+    height: 100px;
+}
+
+/*筛选框*/
+.screen {
+    position: relative;
+}
+
+.screen-title {
+    line-height: 38px;
+    color: #666;
+}
+
+.row {
+    margin-bottom: 15px;
+}
+
+.screen-wrapper, .errorLogScreen-wrapper, .thirdLogScreen-wrapper, .logScreen-wrapper, .jl-wrapper, .epc-wrapper {
+    display: none;
+    width: 330px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 68px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    box-shadow: 0 1px 2px 1px #d0d0d0;
+    -webkit-box-shadow: 0 1px 1px 1px #d0d0d0;
+    -moz-box-shadow: 0 1px 1px 1px #d0d0d0;
+    -ms-box-shadow: 0 1px 1px 1px #d0d0d0;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    z-index: 99;
+}
+
+.wrapper {
+    position: relative;
+    height: 100%;
+}
+
+.screenBtn {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+e {
+    color: red;
+}
+
+@media screen and (max-width: 1400px) {
+    .loginBody .logo{
+        top: 38px !important;
+    }
+}

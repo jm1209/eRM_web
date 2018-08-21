@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>公司管理</title>
+    <link rel="stylesheet" href="../../../css/iconfont.css"/>
+    <link rel="stylesheet" href="../../../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../../../css/public.css"/>
+</head>
+<body class="childrenBody">
+<form class="layui-form">
+    <blockquote class="layui-elem-quote quoteBox">
+        <div class="layui-inline">
+            <div class="layui-btn screen">
+                <i class="iconfont icon-shaixuan"></i>
+                <span>筛选</span>
+            </div>
+        </div>
+        <div class="layui-inline addShow">
+            <a class="layui-btn layui-btn-normal add_btn">
+                <i class="layui-icon">&#xe61f;</i>
+                新增
+            </a>
+        </div>
+
+        <div class="layui-inline addShow">
+            <a class="layui-btn layui-btn-warm pause_btn">
+                <i class="layui-icon">&#xe61f;</i>
+                暂停
+            </a>
+        </div>
+
+        <div class="layui-inline delShow">
+            <a class="layui-btn layui-btn-danger layui-btn-normal delAll_btn">
+                <i class="layui-icon">&#xe640;</i>
+                删除
+            </a>
+        </div>
+        <div class="screen-wrapper">
+            <div class="wrapper">
+
+                <div class="layui-row row">
+                    <div class="layui-col-md3 screen-title">区域</div>
+                    <div class="layui-col-md9">
+                        <input type="text" class="area layui-input" placeholder="请选择区域">
+                    </div>
+                </div>
+                <div class="layui-row row">
+                    <div class="layui-col-md3 screen-title">项目类型</div>
+                    <div class="layui-col-md9">
+                        <select name="projectType" lay-filter="projectType" class="projectType">
+                            <option value="">全部</option>
+                            <option value="1">分布式低压</option>
+                            <option value="2">分布式高压</option>
+                            <option value="3">地面集中式</option>
+                            <option value="4">风电</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-row row">
+                    <div class="layui-col-md3 screen-title">项目状态</div>
+                    <div class="layui-col-md9">
+                        <select name="projectStatus" lay-filter="projectStatus" class="projectStatus">
+                            <option value="">全部</option>
+                            <option value="8">项目未启动</option>
+                            <option value="0">项目启动</option>
+                            <option value="1">完善信息</option>
+                            <option value="2">制定计划中</option>
+                            <option value="3">计划提交</option>
+                            <option value="4">审批通过</option>
+                            <option value="5">审批拒绝</option>
+                            <option value="6">复审通过</option>
+                            <option value="7">复审拒绝</option>
+                            <option value="9">项目暂停</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-row row">
+                    <div class="layui-col-md3 screen-title">项目名称</div>
+                    <div class="layui-col-md9">
+                        <input type="text" class="layui-input projectName" name="projectName" lay-filter="projectName"
+                               placeholder="请输入">
+                    </div>
+                </div>
+                <div class="screenBtn">
+                    <a class="layui-btn search_btn">搜索</a>
+                    <button class="layui-btn reset">重置</button>
+                </div>
+            </div>
+        </div>
+    </blockquote>
+    <!--表格数据-->
+    <table id="tableList" lay-filter="tableList"></table>
+
+    <!--操作-->
+    <script type="text/html" id="listBar">
+        <a class="layui-btn layui-btn-xs layui-btn-primary" lay-event="edit">编辑</a>
+    </script>
+</form>
+
+<script src="../../../layui/layui.js"></script>
+<script src="../../../js/common/base.js"></script>
+<script src="../../../js/project_system/project_start/project_start.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件上传</title>
+    <link rel="stylesheet" href="../../../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../../../css/public.css"/>
+</head>
+<body class="childrenBody">
+    <div class="layui-upload">
+        <button type="button" class="layui-btn layui-btn-normal" id="testList">选择多文件</button>
+        <button type="button" class="layui-btn" id="testListAction" style="display: none">开始上传</button>
+        <div class="layui-upload-list">
+            <table class="layui-table">
+                <thead>
+                <tr><th>文件名</th>
+                    <th>大小</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr></thead>
+                <tbody id="demoList"></tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <input type="hidden" id="uploadJson">
+
+    <script src="../../../layui/layui.js"></script>
+    <script src="../../../js/common/base.js"></script>
+    <script src="../../../js/daily_manage/daily_work/upload.js"></script>
+</body>
+</html>

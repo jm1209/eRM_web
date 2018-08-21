@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>项目启动</title>
+    <link rel="stylesheet" href="../../../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../../../css/public.css"/>
+    <link rel="stylesheet" href="../../../css/project_start.css"/>
+</head>
+<body class="childrenBody">
+<input type="hidden" class="sign">
+<div class="lay-item">
+    <div class="lay-inine">
+        <div class="lay-name">项目编号 <i>*</i></div>
+        <div class="lay-input"><input type="text" class="projectNo"></div>
+    </div>
+    <div class="lay-inine">
+        <div class="lay-name">项目名称 <i>*</i></div>
+        <div class="lay-input"><input type="text" class="projectName"></div>
+    </div>
+    <div class="lay-inine">
+        <div class="lay-name">业主 <i>*</i></div>
+        <div class="lay-input">
+            <select class="companyId">
+                <option value="">请选择</option>
+            </select>
+        </div>
+    </div>
+    <div class="lay-inine">
+        <div class="lay-name">项目公司 <i>*</i></div>
+        <div class="lay-input">
+            <select class="companyProject">
+                <option value="">请选择</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="lay-item">
+    <div class="lay-inine">
+        <div class="lay-name">项目类型 <i>*</i></div>
+        <div class="lay-input">
+            <select class="projectType">
+                <option value="">请选择</option>
+                <option value="1">分布式低压</option>
+                <option value="2">分布式高压</option>
+                <option value="3">地面集中式</option>
+                <option value="4">风电</option>
+            </select>
+        </div>
+    </div>
+    <div class="lay-inine">
+        <div class="lay-name">所属区域 <i>*</i></div>
+        <div class="lay-input"><input type="text" class="areaName"></div>
+    </div>
+    <div class="lay-inine">
+        <div class="lay-name">并网时间 <i>*</i></div>
+        <div class="lay-input"><input type="text" class="connectGridTime"></div>
+    </div>
+    <div class="lay-inine">
+        <div class="lay-name">项目经理 <i>*</i></div>
+        <div class="lay-input">
+            <select class="manager">
+                <option value="">请选择</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="lay-item">
+    <div class="lay-textarea">
+        <div class="lay-name">并网容量<i>*</i></div>
+        <textarea class="capacity"></textarea>
+    </div>
+</div>
+
+<div class="info-wrapper">
+    <div class="top">
+        <h2>公司注册信息 <i>*</i></h2>
+        <button class="layui-btn layui-btn-sm layui-btn-normal enroll">选择文件</button>
+    </div>
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <td>文件名</td>
+            <td>文件大小</td>
+            <td>文件状态</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody id="enrollBox">
+
+        </tbody>
+    </table>
+</div>
+
+<div class="info-wrapper">
+    <div class="top">
+        <h2>备案信息 <i>*</i></h2>
+        <button class="layui-btn layui-btn-sm layui-btn-normal record">选择文件</button>
+    </div>
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <td>文件名</td>
+            <td>文件大小</td>
+            <td>文件状态</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody id="recordBox">
+        </tbody>
+    </table>
+    <h3>备案信息说明</h3>
+    <textarea class="recordInfo"></textarea>
+</div>
+
+<div class="info-wrapper">
+    <div class="top">
+        <h2>接入信息及手续办理状态 <i>*</i></h2>
+        <button class="layui-btn layui-btn-sm layui-btn-normal access">选择文件</button>
+    </div>
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <td>文件名</td>
+            <td>文件大小</td>
+            <td>文件状态</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody id="accessBox">
+
+        </tbody>
+    </table>
+    <h3>接入信息及手续办理状态</h3>
+    <textarea class="accessInfo"></textarea>
+</div>
+
+
+<div class="info-wrapper">
+    <div class="top">
+        <h2>科研或初设资料文件 </h2>
+        <button class="layui-btn layui-btn-sm layui-btn-normal science">选择文件</button>
+    </div>
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <td>文件名</td>
+            <td>文件大小</td>
+            <td>文件状态</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody id="scienceBox">
+
+        </tbody>
+    </table>
+
+    <h3>其他</h3>
+    <textarea class="others"></textarea>
+</div>
+
+<div class="button">
+    <a href="javascript:;" class="keep layui-btn layui-btn-normal layui-btn-sm">保存</a>
+    <a href="javascript:;" class="hand layui-btn layui-btn-normal layui-btn-sm">提交</a>
+</div>
+
+<script src="../../../layui/layui.js"></script>
+<script src="../../../js/common/base.js"></script>
+<script src="../../../js/project_system/project_start/project_start_update.js"></script>
+</body>
+</html>
